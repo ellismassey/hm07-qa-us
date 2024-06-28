@@ -43,7 +43,7 @@ test('Should display Everything you need to console', async () => {
 // TEST 2 : Response 200
 
 // eslint-disable-next-line no-undef
-const config = require('../config');
+//const config = require('../config');
 
 const requestBody = {
 	"products": [
@@ -86,7 +86,7 @@ test('Should display Response 200', async () => {
 // TEST 3 : Check the delivery cost
 
 // eslint-disable-next-line no-undef
-const config = require('../config');
+//const config = require('../config');
 
 const requestBody = {
 	"products": [
@@ -132,7 +132,7 @@ test('Should display Delivery type and cost', async () => {
 // TEST 4 Adding items to the cart
 
 // eslint-disable-next-line no-undef
-const config = require('../config');
+//const config = require('../config');
 
 const requestBody = {
 	"productsList": [

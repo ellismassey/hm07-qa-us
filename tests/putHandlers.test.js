@@ -33,7 +33,7 @@ test('Should put Grocery item price change to the console', async () => {
 // TEST 2 Repsonse 200
 
 // eslint-disable-next-line no-undef
-const config = require('../config');
+//const config = require('../config');
 
 const requestBody = {
 	

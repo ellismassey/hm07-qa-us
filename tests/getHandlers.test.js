@@ -21,7 +21,7 @@ test('Should Get a list of Warehouses', async () => {
 // TEST 2 : Response 200
 
 // eslint-disable-next-line no-undef
-const config = require('../config');
+//const config = require('../config');
 
 test('Should display Response 200', async () => {
 	try {
