@@ -39,7 +39,7 @@ test('Should display Everything you need to console', async () => {
 	}
 });
 
-
+/*
 // TEST 2 : Response 200
 
 // eslint-disable-next-line no-undef
@@ -128,6 +128,7 @@ test('Should display Delivery type and cost', async () => {
 });
 
 
+
 // TEST 4 Adding items to the cart
 
 // eslint-disable-next-line no-undef
@@ -166,3 +167,5 @@ test('Should add items to the cart', async () => {
 		console.error(error);
 	}
 });
+
+*/

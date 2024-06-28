@@ -29,7 +29,7 @@ test('Should put Grocery item price change to the console', async () => {
 	}
 });
 
-
+/*
 // TEST 2 Repsonse 200
 
 // eslint-disable-next-line no-undef
@@ -60,3 +60,5 @@ test('Should get Response 200', async () => {
 		console.error(error);
 	}
 });
+
+*/

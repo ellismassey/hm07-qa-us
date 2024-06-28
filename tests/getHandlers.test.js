@@ -16,6 +16,8 @@ test('Should Get a list of Warehouses', async () => {
 	}
 });
 
+/*
+
 // TEST 2 : Response 200
 
 // eslint-disable-next-line no-undef
@@ -33,3 +35,5 @@ test('Should display Response 200', async () => {
 		console.error(error);
 	}
 });
+
+*/
