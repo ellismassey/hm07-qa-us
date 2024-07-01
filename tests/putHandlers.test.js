@@ -12,17 +12,18 @@ const requestBody = {
 
 test('Should put Grocery item price change to the console', async () => {
     try {
-		const response = await fetch(`${config.API_URL}/api/v1/products/5`, {
+		const response = await fetch(`${config.API_URL}/api/v1/products/7`, {
 			method: 'PUT',
 			headers: {
 			'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(requestBody)
 		});
-
+		
 		const data = await response.json();
 		console.log(data);
-        
+		expect(price).toBe(175);
+	
 
 	} catch (error) {
 		console.error(error);

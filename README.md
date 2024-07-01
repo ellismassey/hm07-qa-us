@@ -15,6 +15,7 @@ In this code, we're making a GET request to the URL 'https://79ecc735-746a-4b71-
 ## TEST 1 Get a list of Warehouses
 Run:  npx jest tests/getHandlers.test.js
 
+Expected Result:
 console.log
     [
       { name: 'Everything You Need', workingHours: { start: 7, end: 23 } },
@@ -25,21 +26,34 @@ console.log
 
       at Object.log (tests/getHandlers.test.js:9:11)
 Results:   PASS  ./getHandlers.test.js
-  √ Show a list of Warehouses (1134 ms)
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   0 total
-Time:        3.156 s
-Ran all test suites matching /tests\\getHandlers.test.js/i.
+
+Actual Result:
+  console.log
+    {
+      name: 'Everything You Need',
+      workingHours: { start: 7, end: 23 },
+      price: 9,
+      isWarehouseWorking: true,
+      isItemsAvailable: false,
+      percentOfAvailableItems: 67,
+      availableProducts: [ { id: 4, quantity: 9 }, { id: 9, quantity: 4 } ]
+    }
+
+      at Object.log (tests/postHandlers.test.js:35:17)
+
+ PASS  tests/postHandlers.test.js
+  √ Should display Everything you need to console (557 ms)    
 
 ## Test 2 Get Response 200
+
+Epected Result: Response 200
+
+Actual Result: Response 200
+
 Run:  npx jest tests/getHandlers.test.js
 
   √ Response 200 (813 ms)
-Test Suites: 1 passed, 1 total                                                                                                                         
-Tests:       1 passed, 1 total                                                                                                                                      Snapshots:   0 total
-Time:        2.151 s, estimated 3 s
-Ran all test suites matching /tests\\getHandlers.test.js/i.
+
 
 # TASK 2: POST (postHandlers.test.js)
 
@@ -48,6 +62,7 @@ In this code, we're making a POST request to the URL 'https://79ecc735-746a-4b71
 ## Test 1 Everything you need log to console
 Run: npx jest tests/postHandlers.test.js
 
+Expected Result:
   console.log
     {
       name: 'Everything You Need',
@@ -62,38 +77,42 @@ Run: npx jest tests/postHandlers.test.js
       at Object.log (tests/postHandlers.test.js:29:11)
 PASS  ./postHandlers.test.js
   √ POST request to the specified URL and check response (855 ms)                                                                                                       
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total                                                                                                                                      Snapshots:   0 total
-Time:        2.199 s, estimated 3 s
-Ran all test suites matching /tests\\postHandlers.test.js/i
+ 
+ Acutal Result:
+  console.log
+    {
+      name: 'Everything You Need',
+      workingHours: { start: 7, end: 23 },
+      price: 9,
+      isWarehouseWorking: true,
+      isItemsAvailable: false,
+      percentOfAvailableItems: 50,
+      availableProducts: [ { id: 4, quantity: 9 } ]
+    }
+
+      at Object.log (tests/postHandlers.test.js:29:11)
+PASS  ./postHandlers.test.js
+  √ POST request to the specified URL and check response (855 ms)
+
 
 ## TEST 2 Get Response 200
 Run: npx jest tests/postHandlers.test.js
- PASS  ./postHandlers.test.js
-  √ Response 200 (776 ms)                                                                                                                         
-Test Suites: 1 passed, 1 total                                                                                                      
-Tests:       1 passed, 1 total                                                                                                                                      Snapshots:   0 total
-Time:        2.119 s, estimated 3 s
-Ran all test suites matching /tests\\postHandlers.test.js/i.
-console.log
-    {
-      'Fast Delivery': { deliveryPrice: 0 },
-      Speedy: { deliveryPrice: 7 },
-      'Food Service': { deliveryPrice: 0 },
-      'Order and Go': { deliveryPrice: 5 }
-    }
 
-      at Object.log (tests/postHandlers.test.js:33:11)
+Expected Result:
+
+ PASS  ./postHandlers.test.js
+  √ Response 200 
+
+Acutal Result:
+
 PASS  ./postHandlers.test.js
-  √ Response 200 (1155 ms)                                                                                                                                 
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   0 total
-Time:        2.661 s, estimated 3 s
-Ran all test suites matching /tests\\postHandlers.test.js/i.
+  √ Response 200 
 
 ## TEST 3 Delivery Cost
 RUN: npx jest tests/postHandlers.test.js
+
+Expected result:
+
 console.log
     {
       'Fast Delivery': { deliveryPrice: 0 },
@@ -104,25 +123,56 @@ console.log
 
       at Object.log (tests/postHandlers.test.js:33:11)
 PASS  ./postHandlers.test.js
-  √ Response 200 (1155 ms)                                                                                                                                   
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   0 total
-Time:        2.661 s, estimated 3 s
-Ran all test suites matching /tests\\postHandlers.test.js/i.
+
+Actual result:
+
+console.log
+    {
+      'Fast Delivery': { deliveryPrice: 0 },
+      Speedy: { deliveryPrice: 7 },
+      'Food Service': { deliveryPrice: 0 },
+      'Order and Go': { deliveryPrice: 5 }
+    }
+
+      at Object.log (tests/postHandlers.test.js:33:11)
+PASS  ./postHandlers.test.js
 
 ## TEST 4 Adding items to the cart
+
+Expected Result:
+
+    "id": 2,
+    "name": "My weekend set",
+    "productsList": [
+        {
+            "id": 1,
+            "name": "Red caviar 'White Sea'",
+            "price": 45,
+            "weight": 5,
+            "units": "kg",
+            "quantity": 2
+        },
+        {
+            "id": 5,
+            "name": "French baguette",
+            "price": 15,
+            "weight": 1,
+            "units": "kg",
+            "quantity": 2
+        }
+    ],
+    "productsCount": 4
+
+
+
+Actual result:
 console.log
     { code: 404, message: 'Not Found' }
 
       at Object.log (tests/postHandlers.test.js:160:11)
 PASS  tests/postHandlers.test.js
-  √ Should add items to the cart (950 ms)
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   0 total
-Time:        2.193 s
-Ran all test suites matching /tests\\postHandlers.test.js/i.
+  √ Should add items to the cart 
+
 
 # TASK 3:PUT (putHandlers.test.js)
 
@@ -131,32 +181,35 @@ In this code, we're making a PUT request to the URL 'https://79ecc735-746a-4b71-
 ## TEST 1 Grocery item price change
 Run: npx jest tests/putHandlers.test.js
 
+Expected result:
+
   console.log
     { ok: true }
 
       at Object.log (tests/putHandlers.test.js:22:11)
  PASS  tests/putHandlers.test.js
-  √ Should put Grocery item price change to the console (715 ms)                                                                                                                         
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   0 total
-Time:        2.076 s
-Ran all test suites matching /tests\\putHandlers.test.js/i.
+  √ Should put Grocery item price change to the console 
+
+Actual result:
+
+  console.log
+    { ok: true }
+ 
+
+
 
 ## TEST 2 Response 200
 Run: npx jest tests/putHandlers.test.js
 
-console.log
-    { ok: true }
+Expected result:
 
-      at Object.log (tests/putHandlers.test.js:39:11)
 PASS  ./putHandlers.test.js
   √ Response 200 (987 ms)
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   0 total
-Time:        2.619 s
-Ran all test suites matching /tests\\putHandlers.test.js/i.
+
+Actual result:
+
+PASS  ./putHandlers.test.js
+  √ Response 200 (987 ms)
 
 # TASK 4: DELETE (deleteHandlers.test.js)
 
@@ -164,18 +217,29 @@ In this code, we're making a DELETE request to the URL 'https://79ecc735-746a-4b
 
 ## TEST 1 Delete the Kit 
 Run: npx jest tests/deleteHandlers.test.js
+
+Expected result:
+
  PASS  ./deleteHandlers.test.js
-  √ Deleting a Kit from the specified URL (896 ms)                           
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total                                                                                                                                      Snapshots:   0 total
-Time:        2.244 s
-Ran all test suites matching /tests\\deleteHandlers.test.js/i.
+  √ Deleting a Kit from the specified URL (896 ms)   
+
+Actual result:
+
+ PASS  ./deleteHandlers.test.js
+  √ Deleting a Kit from the specified URL (896 ms) 
+
 
 ## TEST 2 Response 200
 Run: npx jest tests/deleteHandlers.test.js
+
+Expected result:
+
  PASS  ./deleteHandlers.test.js
   √ Response 200 (943 ms)
-Test Suites: 1 passed, 1 total                                                                                                                          Tests:       1 passed, 1 total                                                                                                                                      Snapshots:   0 total
-Time:        2.282 s, estimated 3 s
-Ran all test suites matching /tests\\deleteHandlers.test.js/i.
+
+Actual result:
+
+ PASS  ./deleteHandlers.test.js
+  √ Response 200 (943 ms)
+
 

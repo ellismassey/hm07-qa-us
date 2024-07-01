@@ -32,7 +32,9 @@ test('Should display Everything you need to console', async () => {
 		});
 
 		const data = await response.json();
-		console.log(data);
+        console.log(data);
+		expect(data).toBeDefined();
+        expect(data.name).toBe("Everything You Need");
 
 	} catch (error) {
 		console.error(error);
@@ -120,6 +122,7 @@ test('Should display Delivery type and cost', async () => {
 		console.log(data);
 
 	    expect(data).toBeDefined();
+        expect(data.deliveryType.length).toBe(4);
 
 
 	} catch (error) {

@@ -9,12 +9,13 @@ test('Should Get a list of Warehouses', async () => {
 		const data = await response.json();
 
 		console.log(data);
-
+		expect(data).toBeDefined();
 
 	} catch (error) {
 		console.error(error);
 	}
 });
+
 
 /*
 
