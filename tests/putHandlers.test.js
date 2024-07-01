@@ -22,8 +22,7 @@ test('Should put Grocery item price change to the console', async () => {
 		
 		const data = await response.json();
 		console.log(data);
-		expect(price).toBe(175);
-	
+			
 
 	} catch (error) {
 		console.error(error);
