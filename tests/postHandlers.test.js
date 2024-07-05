@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-undef
-const { default: expect } = require('expect');
 const config = require('../config');
+
 
 const requestBody = {
 	"products": [

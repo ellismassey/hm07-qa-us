@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-undef
-const { default: expect } = require('expect');
 const config = require('../config');
+
 
 test('Should Get a list of Warehouses and Response 200', async () => {
 	try {
