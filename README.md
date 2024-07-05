@@ -57,7 +57,7 @@ Run:  npx jest tests/getHandlers.test.js
 
 # TASK 2: POST (postHandlers.test.js)
 
-In this code, we're making a POST request to the URL 'https://79ecc735-746a-4b71-838c-6f15a9ac17d9.containerhub.tripleten-services.com/api/v1/warehouses/check'. We're also passing in an object that contains the data we want to send to the server. TEST 1 The method property is set to 'POST', and we're using the headers property to specify that we're sending JSON data. We're also using the JSON.stringify() method to convert the data object into a JSON string before sending it, and log it to the console using endpoint (/everything-you-need/v1/calculate). TEST 2 is to check the response to be 200 using endpoint (/everything-you-need/v1/calculate). TEST 3 will check the cost in different services with endpoint (/api/v1/couriers/check) and log it to the console. TEST 4 is adding items to the cart using endpoint (/api/v1/kits/8/products)
+In this code, we're making a POST request to the URL 'https://79ecc735-746a-4b71-838c-6f15a9ac17d9.containerhub.tripleten-services.com/api/v1/warehouses/check'. We're also passing in an object that contains the data we want to send to the server. TEST 1 The method property is set to 'POST', and we're using the headers property to specify that we're sending JSON data. We're also using the JSON.stringify() method to convert the data object into a JSON string before sending it, and log it to the console using endpoint (/everything-you-need/v1/calculate). TEST 2 is to check the response to be 200 using endpoint (/everything-you-need/v1/calculate). TEST 3 will check the cost in different services with endpoint (/api/v1/couriers/check) and log it to the console. 
 
 ## Test 1 Everything you need log to console
 Run: npx jest tests/postHandlers.test.js
@@ -137,43 +137,6 @@ console.log
       at Object.log (tests/postHandlers.test.js:33:11)
 PASS  ./postHandlers.test.js
 
-## TEST 4 Adding items to the cart
-
-Expected Result:
-
-    "id": 2,
-    "name": "My weekend set",
-    "productsList": [
-        {
-            "id": 1,
-            "name": "Red caviar 'White Sea'",
-            "price": 45,
-            "weight": 5,
-            "units": "kg",
-            "quantity": 2
-        },
-        {
-            "id": 5,
-            "name": "French baguette",
-            "price": 15,
-            "weight": 1,
-            "units": "kg",
-            "quantity": 2
-        }
-    ],
-    "productsCount": 4
-
-
-
-Actual result:
-console.log
-    { code: 404, message: 'Not Found' }
-
-      at Object.log (tests/postHandlers.test.js:160:11)
-PASS  tests/postHandlers.test.js
-  √ Should add items to the cart 
-
-
 # TASK 3:PUT (putHandlers.test.js)
 
 In this code, we're making a PUT request to the URL 'https://79ecc735-746a-4b71-838c-6f15a9ac17d9.containerhub.tripleten-services.com/api/v1/warehouses/check'. We're also passing in an object that contains the data we want to send to the server. The method property is set to 'PUT', and we're using the headers property to specify that we're sending JSON data. We're also using the JSON.stringify() method to convert the data object into a JSON string before sending it. TEST 1 will change the Kit using endpoint (/api/v1/products/5). TEST 2 will check the response to be 200.
@@ -195,8 +158,6 @@ Actual result:
   console.log
     { ok: true }
  
-
-
 
 ## TEST 2 Response 200
 Run: npx jest tests/putHandlers.test.js
