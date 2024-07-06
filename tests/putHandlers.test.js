@@ -20,7 +20,8 @@ test('Should put Grocery item price change to the console', async () => {
 		
 		const data = await response.json();
 
-		//verify the grocery item change
+		expect(data).toBeDefined();
+
 		console.log(data);	
 
 	} catch (error) {
@@ -38,9 +39,6 @@ test('Should get Response 200', async () => {
 			body: JSON.stringify(requestBody)
 		});
 		
-		const data = await response.json();
-
-		//Checks the status code
 		expect(response.status).toBe(200);
 			
 

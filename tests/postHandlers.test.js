@@ -34,7 +34,6 @@ test('Should display data to console', async () => {
 		const data = await response.json();
         console.log(data);
 
-        //logs data to the console
 		expect(data).toBeDefined();
 
        
@@ -58,7 +57,6 @@ test('Should get Response 200', async () => {
 		const data = await response.json();
         console.log(data);
 
-        //checks the status code
         expect(response.status).toBe(200);
 
 	} catch (error) {
@@ -80,7 +78,6 @@ test('Should get Everything You Need to the console', async () => {
 		const data = await response.json();
         console.log(data);
 
-        //displays "Everything You Need" to the console
         expect(data.name).toBe("Everything You Need");
 
 	} catch (error) {

@@ -8,7 +8,7 @@ test('Should remove kit', async () => {
 		});
 
 		const data = await response.json();
-		// Ensures the response body is defined
+		
 		expect(data).toBeDefined();
 
 	} catch (error) {
@@ -21,10 +21,7 @@ test('Should get Response 200', async () => {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/7`, {
 			method: 'DELETE',
 		});
-
-		const data = await response.json();
 		
-		//Check the status code
 		expect(response.status).toBe(200); 
 
 	} catch (error) {

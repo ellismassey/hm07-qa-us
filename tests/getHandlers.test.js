@@ -9,7 +9,6 @@ test('Should Get a list of Warehouses', async () => {
 
 		console.log(data);
 
-		//logs the data to the console
 		expect(data).toBeDefined();
 
 	} catch (error) {
@@ -24,7 +23,6 @@ test('Should get Response 200', async () => {
 
 		console.log(data);
 
-		//checks the status code
 		expect(response.status).toBe(200);
 		
 	} catch (error) {
